@@ -5,9 +5,10 @@
 # This Source Code Form is "Incompatible With Secondary Licenses", as
 # defined by the Mozilla Public License, v. 2.0.
 
-version: '2'
+version: '3.7'
 services:
   bugzilla-dev-sqlite:
+    build: .
     container_name: bugzilla-dev-sqlite
     image: shameerkc/bugzilla-dev-sqlite
     ports:
