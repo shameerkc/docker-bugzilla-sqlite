@@ -1,15 +1,13 @@
 Docker Bugzilla using SQLite
 ============================
 
-Configure a running Bugzilla system using Docker
+Configure a running Bugzilla system using Docker. The project is built on top of the existing [https://github.com/bugzilla/docker-bugzilla-dev](https://github.com/bugzilla/docker-bugzilla-dev) project, with the only difference being that instead of MySQL, Sqlite is used as the internal Database.
 
 ## Features
 
-* Running latest Centos
+* Sqlite is used as the internal DB.
+* Please refer [Parent Project](https://github.com/bugzilla/docker-bugzilla-dev) for more details
 * Preconfigured with initial data and test product
-* Running Apache2 and MySQL Community Server 5.6
-* Code resides in `/var/www/html/bugzilla` and can be updated,
-  diffed, and branched using standard git commands
 
 ## How to install Docker
 
@@ -47,19 +45,19 @@ $ docker-compose rm
 ## How to access the Bugzilla container
 
 If you are using Linux, you can simply point your browser to
-`http://localhost/bugzilla` to see the the Bugzilla home page.
+`http://localhost:8089/bugzilla/` to see the the Bugzilla home page.
 
 The Administrator login is `admin` and the password is `password`.
 You can use the Administrator account to creat other users, add products or
 components, etc.
 
-You can also login to the container using `docker exec -it bugzilla-dev su - bugzilla` command.
+You can also login to the container using `docker exec -it bugzilla-dev-sqlite su - bugzilla` command.
 You can run multiple containers but you will need to give each one a different name/hostname
 as well as non-conflicting ports numbers for httpd and vnc.
 
 ## TODO
 
-* Enable SSL support.
+* No changes are planned now.
 
 [docker]: https://docs.docker.com/installation/
 [docker-compose]: https://docs.docker.com/compose/install/
